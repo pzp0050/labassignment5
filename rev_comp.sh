@@ -1,8 +1,10 @@
-#! /bin/bash
+#!/bin/sh
 
-#Sanity Check: Make sure a single file is given at command line; provide usage statement
-if [ $# -lt 1 ] || [ $# -gt 1 ];then
-echo "Usage: Please provide a single FASTA file at the command line"
+# help comment
+
+if [ $# -lt 1 ] || [ $# -gt 1 ];
+then
+echo "Please provide a fasta file in the input"
 exit
 fi
 
@@ -14,9 +16,24 @@ name=`grep ">" $1`
 sequence=`grep -v ">" $1`
 
 echo "Name: $name"
+echo "sequence: $sequence"
+#calculate length of sequence
+len=${#sequence}
 
-#reverse and complement the contents of sequence variable
-rc=`echo $sequence|rev | tr 'ATCGatcg' 'TAGCtagc'`
+echo "Length: $len"
 
-echo $name >rc.$1
-echo $rc >>rc.$1
+#loop through sequence in reverse
+for ((i=$len; i>=0; i--))
+do
+    reverse="$reverse${$sequence:$i:1}"
+done
+
+echo "$sequence
+$reverse
+"
+
+#complement sequence
+rc=`echo $reverse | tr 'atcg' 'tagc'`
+
+echo $name >$1.rc.txt
+echo $rc >>$1.rc.txt
