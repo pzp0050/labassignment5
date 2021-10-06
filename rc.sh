@@ -22,18 +22,29 @@ len=${#sequence}
 
 echo "Length: $len"
 
+<<<<<<< HEAD
 #loop through sequence in reverse
 for ((i=$len; i>=0; i--))
 do
     reverse="$reverse${$sequence:$i:1}"
 done
+=======
+echo $sequence >seq.txt
+rc=`rev seq.txt | tr 'ATCGatcg' 'TAGCtagc'`
+>>>>>>> 53324e7901a738f7118ee827c8de9a0b723901c8
 
 echo "$sequence
 $reverse
 "
 
+
+<<<<<<< HEAD
 #complement sequence
 rc=`echo $reverse | tr 'atcg' 'tagc'`
+=======
+echo "$rc
+"
+>>>>>>> 53324e7901a738f7118ee827c8de9a0b723901c8
 
 echo $name >$1.rc.txt
 echo $rc >>$1.rc.txt
