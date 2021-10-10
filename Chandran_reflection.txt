@@ -1,0 +1,16 @@
+Reflect on how you currently manage your documents and code, particularly content associated with publishable work. Would it stand up to a reproducibility test? How do you think non-reproducibile research affects computational biology and bioinformatics? What about in your specific field of study
+
+Normally I store those documents in harddrives and some times I upload DNA 
+sequence data in to repositories like NCBI gene bank. So storing important 
+documents in physical drives is less protective than using Git like remote 
+repositories because physical drives can damage and limited individual can 
+use those in same time. So I think from this module I learned lot of things 
+about git and hope to use these techniques and methods in my future research 
+work.
+In evolutionary biology we always work with DNA sequences and phylogenetic 
+trees like thinks. So to make phylogenetic trees we use those DNA sequences 
+and also some programming codes. now days many researches adding their 
+sequences in to gene bank like repositories and codes in to git like 
+repositories. This will help to other researches who are working on similar 
+research works. So I think reproducibility is highly affected to the 
+advancement of my research field
